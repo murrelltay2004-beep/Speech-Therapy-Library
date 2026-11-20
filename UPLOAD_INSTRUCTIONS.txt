@@ -1,0 +1,13 @@
+SPEECH THERAPY ACTIVITY LIBRARY — UPDATE PACKAGE
+
+Upload ALL the HTML files inside this ZIP to the ROOT of your GitHub repository (not a subfolder).
+
+IMPORTANT: The file named index.html replaces the existing homepage and adds links to the new activities.
+
+To upload via GitHub: open the repository > Add file > Upload files > drag all HTML files from the unzipped folder > Commit changes.
+
+The ZIP itself is NOT what you upload. Unzip first, then upload the HTML files inside.
+
+Includes 10 original activities and 15 additional activities. The latest Polar Express version is included.
+
+After upload, wait a few minutes and refresh your GitHub Pages site.
