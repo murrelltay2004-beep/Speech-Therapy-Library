@@ -1,0 +1,1 @@
+Upload the 7 HTML files to the ROOT of your existing GitHub repository. They replace existing files with the same names; no homepage edit needed. Direct verified official clips currently available for Polar Express opening scene and Wicked Popular; other buttons open labeled YouTube searches, not verified clips. Movie videos are not embedded or downloaded.

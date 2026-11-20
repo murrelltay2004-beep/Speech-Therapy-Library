@@ -18,4 +18,19 @@ document.querySelectorAll('.extrascore').forEach(b=>b.onclick=()=>{if(extraRated
 $('extraNext').onclick=()=>{extraAt++;if(extraAt<extraQueue.length)renderExtra();else goAsk()};
 function goAsk(){show('ask');askIndex=0;promptAsk()}
 $('start').addEventListener('click',function(e){e.preventDefault();try{start();document.getElementById('game').scrollIntoView({behavior:'smooth',block:'start'});}catch(err){alert('Unable to start: '+err.message);}});$('again').addEventListener('click',function(){start()});
-</script></body></html>
+</script><section id="video-resource" style="max-width:900px;margin:18px auto;padding:16px;border:2px solid #87a5c2;border-radius:14px;background:#f4f9ff;color:#18334b;font-family:system-ui,Arial,sans-serif"><strong style="font-size:1.1rem">🎬 Watch the matching movie scene</strong><p style="margin:8px 0">Open the clip in a new tab, then return here for the activity. Some links open YouTube search results so you can choose an available clip; those are labeled clearly.</p><a id="video-link" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#164b83;color:white;padding:12px 16px;border-radius:9px;font-weight:700;text-decoration:none" href="#">Find a movie clip ↗</a><div id="video-note" style="font-size:.88rem;margin-top:8px"></div></section><script>(function(){
+const sceneNames=["The train arrives at the house", "Hot chocolate on the train", "The ticket goes missing", "The train travels over the ice", "The children reach the North Pole", "The first gift of Christmas", "The bell on Christmas morning"];
+const direct={"0": "https://www.youtube.com/watch?v=GY6Rpl4EjfI"};
+const movie="The Polar Express (2004)";
+const sceneSelect=document.getElementById('scene');
+function updateVideo(){
+ const link=document.getElementById('video-link'),note=document.getElementById('video-note');
+ const idx=sceneSelect?Math.max(0,sceneSelect.selectedIndex):0;
+ const scene=sceneSelect?(sceneSelect.options[idx]?.text||sceneNames[idx]||'movie scene'):'movie clips';
+ const directUrl=direct[idx];
+ if(directUrl){link.href=directUrl;link.textContent='▶ Watch verified scene clip ↗';note.textContent='Direct link to an official studio clip: '+scene;}
+ else {link.href='https://www.youtube.com/results?search_query='+encodeURIComponent(movie+' '+scene+' official movie clip');link.textContent='🔎 Find this scene on YouTube ↗';note.textContent='YouTube search, not a verified direct clip. Choose a suitable result for: '+scene;}
+}
+if(sceneSelect)sceneSelect.addEventListener('change',updateVideo);
+updateVideo();
+})();</script></body></html>
